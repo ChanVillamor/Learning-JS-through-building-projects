@@ -1,0 +1,119 @@
+:root {
+  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 0.19rem);
+  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #4bff1f;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.sidebar-toggle {
+  position: fixed;
+  top: 1.4rem;
+  right: 3rem;
+  font-size: var(--font-size-md);
+  background: transparent;
+  border-color: transparent;
+  color: #fff;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  animation: bounce 2s ease-in-out infinite;
+  
+}
+.sidebar-toggle:hover {
+  color: #134407;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 1.5rem;
+}
+
+.close-btn {
+  font-size: 1.75rem;
+  background: transparent;
+  border-color: transparent;
+  color: #fff;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  margin-top: 3px;
+}
+.close-btn:hover {
+  color: #134407;
+  transform: rotate(360deg);
+}
+
+.logo {
+  justify-self: center;
+  font-size: 1.75rem;
+}
+
+.links a {
+  display: block;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  transition: all 0.3s linear;
+}
+.links a:hover {
+  background: #fff;
+  color: #134407;
+  padding-left: 1.75rem;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 400px;
+  width: 100%;
+  height: 100%;
+  background: #b2eea3;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+  box-shadow: 0 0 10px;
+  transition: all 0.3s linear;
+  transform: translate(-100%);
+}
+.show-sidebar {
+  transform: translate(0);
+}
+
+@media screen and (max-width: 500px) {
+  
+  .sidebar {
+    width: 350px;
+  }
+
+}
